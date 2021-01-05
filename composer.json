@@ -1,23 +1,26 @@
 {
   "name" : "cyc/sem" ,
   "description" : "sem api" ,
-  "type" : "library" ,
+  "type" : "composer-plugin" ,
   "minimum-stability" : "stable" ,
-  "author" : "cclikecode@gmail.com" ,
-  "require" : {
-	
+  "author" : {
+	"name" : "陈云春" ,
+	"email" : "cclikecode@gmail.com"
   } ,
-  "require-dev": {
-	"phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0"
-  },
+  "require" : {
+	"php" : ">=7.0"
+  } ,
+  "require-dev" : {
+	"phpunit/phpunit" : "^4.8.35 || ^5.7 || ^6.4 || ^7.0"
+  } ,
   "autoload" : {
 	"psr-4" : {
 	  "SEM\\" : "src/"
 	}
-  },
+  } ,
   "autoload-dev" : {
 	"psr-4" : {
-	  "SEM\\Tests\\": "tests/"
+	  "SEM\\Tests\\" : "tests/"
 	}
   }
 }
