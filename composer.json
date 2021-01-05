@@ -2,6 +2,7 @@
   "name" : "cyc/sem" ,
   "description" : "sem api" ,
   "type" : "composer-plugin" ,
+  "version": "1.0.0",
   "minimum-stability" : "stable" ,
   "author" : {
 	"name" : "陈云春" ,
