@@ -26,5 +26,20 @@ class DianqingClientTest extends TestCase
         $c->updateAccessToken();
         $this->assertNotEmpty($c->getAccessToken());
     }
+
+    public function testQuerywordCount()
+    {
+
+        $c = common::getClient();
+        $c->updateAccessToken();
+        $d = [
+            "startDate" => "2021-01-03",
+            "endDate" => "2021-01-03",
+            "type" => "computer",
+        ];
+        $r = $c->doRequest("dianjing", "report", "querywordCount", $d);
+        print_r($r);
+        $this->assertNotEmpty($r->totalNumber);
+    }
 }
 
