@@ -1,0 +1,23 @@
+{
+  "name" : "cyc/sem" ,
+  "description" : "sem api" ,
+  "type" : "library" ,
+  "minimum-stability" : "stable" ,
+  "author" : "cclikecode@gmail.com" ,
+  "require" : {
+	
+  } ,
+  "require-dev": {
+	"phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0"
+  },
+  "autoload" : {
+	"psr-4" : {
+	  "SEM\\" : "src/"
+	}
+  },
+  "autoload-dev" : {
+	"psr-4" : {
+	  "SEM\\Tests\\": "tests/"
+	}
+  }
+}
