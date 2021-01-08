@@ -9,7 +9,7 @@
 namespace SEM\dianqing;
 
 
-class DianjingException extends \Exception
+class DianQingException extends \Exception
 {
 
 

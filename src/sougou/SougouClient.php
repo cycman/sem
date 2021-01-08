@@ -1,5 +1,6 @@
 <?php
-namespace  SEM\sougou;
+
+namespace SEM\sougou;
 
 /**
  * Created by PhpStorm.
@@ -47,7 +48,7 @@ class SougouClient
      */
     public function doRequest($service, $method, $body = [])
     {
-        $url = $this->serviceUrl . '/' . $service . '/' . $method;
+        $url = $this->serviceUrl . '/api/v2/' . $service . '/' . $method;
         $data = [
             "body" => $body,
             "header" => $this->header
@@ -65,7 +66,7 @@ class SougouClient
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => json_encode($data,JSON_FORCE_OBJECT),
+            CURLOPT_POSTFIELDS => json_encode($data, JSON_FORCE_OBJECT),
             CURLOPT_HTTPHEADER => $header
         ));
         $body = curl_exec($ch);
