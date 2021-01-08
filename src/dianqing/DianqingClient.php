@@ -45,7 +45,7 @@ class DianqingClient
 
     /**
      * @return mixed
-     * @throws DianQingException
+     * @throws DianqingException
      */
     public function getAccessToken()
     {
@@ -56,7 +56,7 @@ class DianqingClient
     }
 
     /**
-     * @throws DianQingException
+     * @throws DianqingException
      */
     public function updateAccessToken()
     {
@@ -80,7 +80,7 @@ class DianqingClient
      * @param $method
      * @param $queryData
      * @return mixed
-     * @throws DianQingException
+     * @throws DianqingException
      */
     public function doRequest($model, $service, $method, $queryData)
     {
@@ -109,7 +109,7 @@ class DianqingClient
         curl_close($ch);
         $d = json_decode($body);
         if (isset($d->failures)) {
-            throw new  DianQingException($d->failures);
+            throw new  DianqingException($d->failures);
         }
         return $d;
     }
