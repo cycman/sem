@@ -9,12 +9,12 @@
 namespace SEM\dianqing;
 
 
-class DianjingException extends \Exception
+class DianqingException extends \Exception
 {
 
 
     /**
-     * DianjingException constructor.
+     * DianqingException constructor.
      * @param $failures
      */
     public function __construct($failures)

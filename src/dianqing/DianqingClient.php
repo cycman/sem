@@ -33,13 +33,14 @@ class DianqingClient
      * @param $username
      * @param $serviceUrl
      */
-    public function __construct($apiKey, $apiSecret, $username, $passWord, $serviceUrl)
+    public function __construct($apiKey, $apiSecret, $username, $passWord, $serviceUrl, $accessToken = null)
     {
         $this->apiKey = $apiKey;
         $this->apiSecret = $apiSecret;
         $this->passWord = $passWord;
         $this->username = $username;
         $this->serviceUrl = $serviceUrl;
+        $this->accessToken = null;
     }
 
 
