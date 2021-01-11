@@ -40,7 +40,7 @@ class DianqingClient
         $this->passWord = $passWord;
         $this->username = $username;
         $this->serviceUrl = $serviceUrl;
-        $this->accessToken = null;
+        $this->accessToken = $accessToken;
     }
 
 
