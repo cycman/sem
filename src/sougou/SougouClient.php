@@ -49,10 +49,16 @@ class SougouClient
     public function doRequest($service, $method, $body = [])
     {
         $url = $this->serviceUrl . '/api/v2/' . $service . '/' . $method;
+
         $data = [
             "body" => $body,
             "header" => $this->header
         ];
+        if (empty($body)) {
+            $dataJ = json_encode($data, JSON_FORCE_OBJECT);
+        }else{
+            $dataJ = json_encode($data);
+        }
         $header = array(
             'Content-Type: application/json',
         );
@@ -66,9 +72,10 @@ class SougouClient
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => json_encode($data, JSON_FORCE_OBJECT),
+            CURLOPT_POSTFIELDS => $dataJ,
             CURLOPT_HTTPHEADER => $header
         ));
+
         $body = curl_exec($ch);
         curl_close($ch);
         $d = json_decode($body);
