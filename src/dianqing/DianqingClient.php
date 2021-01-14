@@ -109,7 +109,7 @@ class DianqingClient
         $body = curl_exec($ch);
         curl_close($ch);
         $d = json_decode($body);
-        if (isset($d->failures)) {
+        if (isset($d->failures) && !empty($d->failures)) {
             throw new  DianqingException($d->failures);
         }
         return $d;
