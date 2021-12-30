@@ -14,5 +14,6 @@ class GetReportDataRequest
     public $startRow =0;
     public $rowCount=1;
     public $needSum = false;
+    public $filters = [];
 
 }
