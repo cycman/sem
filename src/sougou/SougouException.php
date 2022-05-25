@@ -12,12 +12,14 @@ namespace Sem\sougou;
 class SougouException extends \Exception
 {
 
+    public $f = [];
     /**
      * SougouException constructor.
      * @param $failures
      */
     public function __construct($failures)
     {
+        $this->f = $failures;
         $messages = [];
         $codes = [];
         foreach ($failures as $f) {
@@ -25,6 +27,6 @@ class SougouException extends \Exception
             $codes[] = $f->code;
         }
 
-        parent::__construct(implode("\n", $messages), implode("|", $codes));
+        parent::__construct(implode("\n", $messages),  $codes[0]);
     }
 }
