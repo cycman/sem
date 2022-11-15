@@ -10,7 +10,7 @@ namespace SEM\baidu;
 
 
 class BDAuthHeader {
-    public $username;
+    public $userName;
     public $password;
     public $target;
     public $token;
@@ -70,7 +70,7 @@ class BDAuthHeader {
      * @return unknown
      */
     public function getUsername() {
-        return $this->username;
+        return $this->userName;
     }
 
     /**
@@ -112,7 +112,7 @@ class BDAuthHeader {
      * @param unknown_type $username
      */
     public function setUsername($username) {
-        $this->username = $username;
+        $this->userName = $username;
     }
 
 }
